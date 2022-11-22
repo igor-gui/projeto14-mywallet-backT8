@@ -11,24 +11,7 @@ app.use(cors())
 
 const users = [];
 
-app.post('/sign-up', async (req, res) => {
-    const { name, password, mail } = req.body
-    const user = {
-        name,
-        password,
-        mail,
-        movs: []
-    }
-    users.push(user)
-    res.send(users)
-})
 
-app.post('/sign-in', async (req, res) => {
-    const {mail, password} = req.body;
-
-   const user = users.find((e) => e.mail === mail)
-    res.send(user)
-})
 
 app.get('/users', async (req, res) => {
     res.send(users)
